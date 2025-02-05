@@ -2,11 +2,11 @@
 let days = 8;
 let hours = 23;
 let minutes = 56;
-let seconds = 5;
+let seconds = 41;
 
 let IntervalVAR;
 let INTERVALTEST;
-let tempo = 5;
+let tempo = 41;
 
 // clock
 function clock() {
