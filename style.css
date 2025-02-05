@@ -1,0 +1,266 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    /* ### Primary */
+
+    --Grayish-blue: hsl(237, 18%, 59%);
+    --Soft-red: hsl(345, 95%, 68%);
+
+    /* ### Neutral */
+
+    --White: hsl(0, 0%, 100%);
+    --Dark-desaturated-blue: hsl(236, 21%, 26%);
+    --Very-dark-blue: hsl(235, 16%, 14%);
+    --Very-dark-mostly-black-blue: hsl(234, 17%, 12%);
+    --defaultfont: "Red Hat Text", serif;
+
+}
+
+body, html{
+    height: 100vh;
+    background-image: url(images/bg-stars.svg);
+
+    color: white;
+    background-color: var(--Very-dark-blue);
+
+    font-family: var(--defaultfont);
+}
+
+main{
+    height: 100vh;
+    background-image: url(images/pattern-hills.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+
+    display: flex;
+    flex-flow: column;
+
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+main > h1{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 650;
+    letter-spacing: 10px;
+}
+
+/* footer */
+ul{
+    list-style-type: none;
+    
+    display: flex;
+    flex-flow: row wrap;
+    gap: 30px;
+
+    position: absolute;
+    bottom:80px;
+}
+
+a:hover > svg path{
+    fill: var(--Soft-red);
+}
+
+#counter{
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 50px;
+
+}
+
+.wrapper{
+
+    display: flex;
+    flex-flow: column nowrap;
+    
+    align-items: center;
+
+    justify-content: center;
+
+}
+.wrapper_external > p:last-of-type{
+    font-size: 1.2rem;
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+    font-weight: 600;
+
+    color: var(--Grayish-blue);
+}
+
+.wrapper_external{
+    aspect-ratio: 1;
+    width: 160px;
+    height: 200px;
+
+    justify-content: flex-end;
+    
+    position: relative;
+
+
+    overflow: hidden;
+
+    margin-bottom: 50px;
+
+}
+
+.numberWrapper{
+    position: absolute;
+
+    width: 100%;
+    height: 40%;
+
+    top: 0;
+
+    margin: 0px 10px;
+    background-color: var(--Dark-desaturated-blue);
+
+    font-size: 110px;
+    font-weight: 1000;
+
+    color: var(--Soft-red);
+
+    outline: 1px solid rgba(0, 0, 0, 0.271);
+    overflow: hidden;
+}
+
+.front-top{
+    top: 0;
+    z-index: 3;
+
+    filter: brightness(85%);
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;    
+
+}
+
+.top_movedown{
+    transform-origin: bottom;
+    animation: movedown 0.5s linear forwards;
+}
+
+@keyframes movedown {
+    
+    to{
+        transform: rotateX(90deg);
+    }
+}
+
+.front-top p {
+    position: relative;
+    top: 50%;
+
+    color: var(--Shadow-red);
+
+
+}
+
+.back-top{
+    top: 0;
+    z-index: 1;
+
+    filter: brightness(85%);
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.back-top p{
+    position: relative;
+    top: 50%;
+
+    color: var(--Shadow-red);
+
+
+}
+
+.front-bottom{
+    top: 40%;
+    z-index: 2;
+
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    /* box-shadow: -1px 8px 1px var(--Very-dark-mostly-black-blue),
+                 0px 1px 8px rgba(255, 255, 255, 0.068) inset
+    ; */
+}
+
+.front-bottom p {
+    position: relative;
+    top: -50%;
+}
+
+
+.back-bottom{
+    top: 40%;
+    z-index: 1;
+
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    box-shadow: -1px 8px 1px var(--Very-dark-mostly-black-blue),
+                 0px 1px 1px rgba(255, 255, 255, 0.022) inset
+    ;
+
+}
+
+.back_movedown{
+    transform-origin: top;
+    animation: movedowntwo 0.5s linear 0.5s forwards;
+}
+
+@keyframes movedowntwo {
+
+    from{
+        z-index: 3;
+        transform:rotateX(90deg) ;
+    }
+   
+}
+
+.back-bottom p{
+    position: relative;
+    top: -50%;
+}
+
+/* circles */
+
+.circle{
+    position: absolute;
+    background-color: var(--Very-dark-mostly-black-blue);
+
+    border-radius: 50%;
+
+    z-index: 4;
+
+    aspect-ratio: 1;
+    width: 15px;
+
+    top: 40%;
+}
+
+.circle-right{
+    right: 0px;
+    transform: translate(50%, -50%);
+
+}
+
+.circle-left{
+    transform: translate(-50%, -50%);
+    left: 0px;
+}
