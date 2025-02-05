@@ -1,0 +1,36 @@
+main {
+    gap: clamp(5px, 5vw, 40px);
+}
+
+main > h1 {
+    font-size: clamp(0.5rem, 4vw, 1.5rem);
+    letter-spacing: clamp(2px, 2vw, 10px);
+}
+
+ul {
+    gap: clamp(15px, 4vw, 30px);
+    bottom: clamp(40px, 10vw, 80px);
+}
+
+#counter {
+    gap: clamp(10px, 6vw, 50px);
+}
+
+.wrapper_external {
+    width: clamp(40px, 20vw, 160px);
+    height: clamp(50px, 25vw, 200px);
+    margin-bottom: clamp(20px, 6vw, 50px);
+}
+
+.numberWrapper {
+    font-size: clamp(50px, 10vw, 110px);
+}
+
+.circle {
+    width: clamp(8px, 3vw, 15px);
+}
+
+.wrapper_external > p:last-of-type{
+    font-size: clamp(0.05rem, 2vw, 1rem);
+    letter-spacing: clamp(1px, 1vw, 6px);
+}
